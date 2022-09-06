@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+    <meta charset="UTF-8">
+    <title>zadanie 1</title>
+    </head>
+    <body>
+        <script>
+            function oblicz(){
+                var rok = document.getElementById('test');
+
+                if(rok.value=="") {alert("pole nie może być puste")
+                rok.style="border:1px solid red";
+                return;
+                }
+                else {
+                    rok.style="border:default";
+                }
+
+                var r = parseInt(rok.value);
+                if((r%4==0 && r%100!=0) || r%400==0) {
+                    wynik.innerHTML="rok jest przestępny";
+                }
+                else {
+                    wynik.innerHTML="rok nie jest przestępny";
+                }
+            }
+        </script>
+        <h1>Czy rok jest przestępny</h1>
+        <form>
+            rok:
+            <input type="text" id="test">
+            <input type="button" value="oblicz" onclick="oblicz()">
+        </form>
+        <div id="wynik"></div>
+    </body>
+</html>

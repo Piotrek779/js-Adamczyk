@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <title>zadanie2</title>
+    </head>
+    <body>
+
+        <script>
+             function oblicz(){
+            var il = document.getElementById('ile');
+            var ile = parseFloat(il.value);
+            var co = document.getElementById('lista');
+            var co2 = parseInt(co.value);
+            switch(co2) {
+                case 1:
+                    var odp = ile*0.62137;
+                    wynik.innerHTML = odp;
+                    break;
+                case 2:
+                    var odp = ile* 10;
+                    wynik.innerHTML = odp;
+                    break;
+                case 3:
+                    var odp = ile* 10;
+                    wynik.innerHTML = odp;
+                    break;
+                case 4:
+                    var odp = ile* 10;
+                    wynik.innerHTML = odp;
+                    break;
+                case 5:
+                    var odp = ile* 1000;
+                    wynik.innerHTML = odp;
+                    break;
+                case 6:
+                    var odp = ile* 0.01;
+                    wynik.innerHTML = odp;
+                    break;
+                case 7:
+                    var odp = ile* 0.001;
+                    wynik.innerHTML = odp;
+                    break;
+                case 8:
+                    var odp = ile* 3.785;
+                    wynik.innerHTML = odp;
+                    break;
+                case 9:
+                    var odp = ile*2.54;
+                    wynik.innerHTML = odp;
+                    break;
+                case 10:
+                    var odp = ile*0.3048;
+                    wynik.innerHTML = odp;
+                    break;
+            }
+        }
+        </script>
+
+        <form>
+        Podaj <input id="ile">
+        <select id="lista">
+            <option value="1">kilometry na mile</option>
+            <option value="2">decymetry na centymetry</option>
+            <option value="3">centymetry na milimetry</option>
+            <option value="4">dekagramy na gramy</option>
+            <option value="5">kilogramy na gramy</option>
+            <option value="6">centymetry na metry</option>
+            <option value="7">milimetry na metry</option>
+            <option value="8">litry na galony</option>
+            <option value="9">cale na centymetry</option>
+            <option value="10">stopy na metry</option>
+            <input type="button" value="oblicz" onclick="oblicz()">
+            wynik: 
+            <div id="wynik"></div>
+    </form>
+    </body>
+</html>
