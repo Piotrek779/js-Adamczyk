@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="A1" placeholder="a1" size="2">
+    x+<input type="text" id="B1" placeholder="b1" size="2">
+    y=<input type="text" id="C1" placeholder="c1" size="2"><br>
+
+    <input type="text" id="A2" placeholder="a2" size="2">
+    x+<input type="text" id="B2" placeholder="b2" size="2">
+    y=<input type="text" id="C2" placeholder="c2" size="2"><br>
+
+    Wynik: <p id="wynik"></p>
+
+    <input type="button" value="Oblicz" onclick="oblicz()"> 
+
+    <script>
+
+        const oblicz = () =>
+        {
+
+            const a1 = parseInt(A1.value);
+            const b1 = parseInt(B1.value);
+            const c1 = parseInt(C1.value); 
+            const a2 = parseInt(A2.value);
+            const b2 = parseInt(B2.value);
+            const c2 = parseInt(C2.value);
+
+            const w = a1 * b2 - b1 * a2;
+            const wx = c1 * b2 - b1 * c2;
+            const wy = a1 * c2 - c1 * a2;
+
+            
+
+            if(w != 0)
+            {
+                const x = wx/w;
+                const y = wy/w;
+                wynik.innerHTML = `x=${x}<br>y=${y}`;
+                return;
+            }
+            else if(w == 0 && wx != 0 || wy != 0)
+            {
+                wynik.innerHTML = "Układ równań jest sprzeczny";
+                return;
+            }
+            else if(w == 0 && wx == 0 && wy == 0)
+            {
+                wynik.innerHTML = "Układ równań jest nieoznaczony";
+                return;
+            }
+
+        }
+
+    </script>
+    
+</body>
+</html>
