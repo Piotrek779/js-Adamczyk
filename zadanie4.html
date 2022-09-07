@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pl">
+  
+<head>
+    <meta charset="UTF-8">
+   
+    <title>zadanie4</title>
+  
+    <style>
+        .container {
+            width: 70%;
+            margin: auto;
+            text-align: center;
+        }
+  
+        .dice {
+            text-align: center;
+            display: inline-block;
+            margin: 10px;
+        }
+  
+        body {
+            background-color: #16181a;
+            margin: 0;
+        }
+  
+        h1 {
+            margin: 30px;
+            font-size: 4.5rem;
+            color: #ffffff;
+            text-align: center;
+        }
+  
+        p {
+            font-size: 2rem;
+            color: #ffffff;
+        }
+  
+        img {
+            width: 100%;
+        }
+  
+        .bottom {
+            padding-top: 30px;
+        }
+  
+        .butn {
+            background: #c0c0c0;
+            border-radius: 7px;
+            color: rgb(0, 0, 0);
+            font-size: 30px;
+            padding: 16px 25px 16px 25px;
+        }
+  
+        .butn:hover {
+            background: #3571be;
+        }
+    </style>
+</head>
+  
+<body>
+    <div class="container">
+  
+        <div class="dice">
+            <p class="Player1">GRACZ1</p>
+            <img class="img1" src="dice6.png">
+        </div>
+  
+        <div class="dice">
+            <p class="Player2">GRACZ2</p>
+            <img class="img2" src="dice6.png">
+        </div>
+    </div>
+  
+    <div class="container bottom">
+        <button type="button" class="butn"
+            onClick="rollTheDice()">
+            rzuć kostką
+        </button>
+    </div>
+    <div class="container bottom">
+        <button type="button" class="butn"
+            onClick="editNames()">
+            zmień nazwy graczy
+        </button>
+    </div>
+  
+    <script>
+  
+        var player1 = "GRACZ 1";
+        var player2 = "GRACZ 2";
+  
+        function editNames() {
+            player1 = prompt("ZMIEŃ NAZWE GRACZA 1");
+            player2 = prompt("ZMIEŃ NAZWE GRACZ 2");
+  
+            document.querySelector("p.Player1")
+                            .innerHTML = player1;
+                              
+            document.querySelector("p.Player2")
+                            .innerHTML = player2;
+        }
+
+        function rollTheDice() {
+            setTimeout(function () {
+                var randomNumber1 = Math.floor(Math.random() * 6) + 1;
+                var randomNumber2 = Math.floor(Math.random() * 6) + 1;
+  
+                document.querySelector(".img1").setAttribute("src",
+                    "dice" + randomNumber1 + ".png");
+  
+                document.querySelector(".img2").setAttribute("src",
+                    "dice" + randomNumber2 + ".png");
+  
+                if (randomNumber1 === randomNumber2) {
+                    document.querySelector("h1").innerHTML = "REMIS!";
+                }
+  
+                else if (randomNumber1 < randomNumber2) {
+                    document.querySelector("h1").innerHTML
+                        = (player2 + " Wygrał/a!");
+                }
+  
+                else {
+                    document.querySelector("h1").innerHTML
+                        = (player1 + " Wygrał/a!");
+                }
+            }, 2500);
+        }
+    </script>
+</body>
+  
+</html>
