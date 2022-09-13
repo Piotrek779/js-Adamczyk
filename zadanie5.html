@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    
+</head>
+<body>
+    <script>
+        function Wielkanoc() {
+
+            var x;
+            var y;
+
+            var rook = document.getElementById('rok');
+            var rok = parseInt(rook.value)
+            
+            if(rok >=1 && rok <=1582) {
+                x = 15;
+                y = 6;
+            } else {
+             if(rok >=1583 && rok <=1699) {
+                x = 22;
+                y = 2;
+             }
+             else {
+            if(rok >= 1700 && rok <=1799) {
+                x = 23;
+                y = 3;
+            } else {
+                if() {
+                    
+                }
+            }
+        }
+        }
+            odp.innerHTML = x +' '+ y;
+        }
+    </script>
+    <input type="number" value="0" id="rok">
+    <input type="button" value="oblicz wielkanoc" onclick="Wielkanoc()">
+    <div id="odp"></div>
+</body>
+</html>
