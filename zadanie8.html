@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+                body{
+
+padding: 0;
+
+margin: 0;
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+height: 100vh;
+
+}
+
+.box{
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+flex-direction: column;
+
+padding: 20px;
+
+border: solid black 5px;
+
+}
+
+.box .text{
+
+width: 50px;
+
+text-align: right;
+
+margin-right: 10px;
+
+}
+
+.line{
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+margin-bottom: 10px;
+
+}
+
+button{
+
+margin-bottom: 10px;
+
+}
+        </style>
+    </head>
+    <body>
+        <script>
+            function oblicz() {
+
+            let m = parseInt(document.getElementById("liczba").value);
+
+            let n = parseInt(document.getElementById("ilosc").value);
+
+            let r = parseInt(document.getElementById("roznica").value);
+
+            let temp = "";
+
+                for (let i=1;i<=n;i++) {
+                    temp+= m+ ", ";
+                    m= m+r;
+                }
+                wynik.innerHTML = temp;
+            }
+        </script>
+        <div class="box">
+        <form>
+            CIAG LICZB <br>
+            pierwsza liczba: <input id="liczba"> <br>
+            ilosc liczb: <input id="ilosc"> <br>
+            roznica liczb: <input id="roznica"> <br>
+            ciag to: <div id="wynik"></div> <br>
+            <input type="button" value="oblicz" onclick="oblicz()"> <br>
+        </form>
+    </div>
+    </body>
+</html>

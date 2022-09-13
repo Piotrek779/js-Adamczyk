@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            function oblicz() {
+
+            let d = parseInt(document.getElementById("dzien").value);
+
+            let m = parseInt(document.getElementById("miesiac").value);
+
+            let y = parseInt(document.getElementById("rok").value);
+
+            if(m<3) {
+                y = y-1;
+                m = m+12;
+            }
+
+            d = y + Math.floor(y/4) - Math.floor(y/100) + Math.floor(y/400) + 3*m - Math.floor((2*m + 1)/5) + d + 1;
+            d -= Math.floor(d/7) *7;
+
+            switch(d) {
+                case 0:
+                var dzien = "niedziela";
+                break;
+                case 1:
+                var dzien = "poniedzialek";
+                break;
+                case 2:
+                var dzien = "wtorek";
+                break;
+                case 3:
+                var dzien = "sroda";
+                break;
+                case 4:
+                var dzien = "czwartek";
+                break;
+                case 5:
+                var dzien = "piatek";
+                break;
+                case 6:
+                var dzien = "sobota";
+                break;
+            }
+            wynik.innerText = dzien
+            }
+        </script>
+        <form>
+            OBLICZANIE DNIA TYOGODNIA   
+            DZIEŃ: <input id="dzien">
+            MIESIĄC: <input id="miesiac">
+            ROK: <input id="rok">
+            DZIEŃ TYGODNIA DLA PODANEJ DATY TO: <div id="wynik"></div>
+            <input type="button" value="oblicz" onclick="oblicz()">
+        </form>
+    </body>
+</html>
