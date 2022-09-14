@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+
+padding: 0;
+
+margin: 0;
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+height: 100vh;
+
+}
+
+.box{
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+flex-direction: column;
+
+padding: 20px;
+
+border: solid black 5px;
+
+}
+
+.box .text{
+
+width: 50px;
+
+text-align: right;
+
+margin-right: 10px;
+
+}
+
+.line{
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+margin-bottom: 10px;
+
+}
+
+button{
+
+margin-bottom: 10px;
+
+}
+</style>
+    </head>
+    <body>
+
+        <script>
+            function oblicz() 
+            {
+                const los = Math.floor(Math.random()*100)+1;
+                let licznik = 0;
+                let liczba = 0;
+                do
+                {
+                    liczba = parseInt(prompt("podaj liczbe"));
+                    licznik++;
+                    
+                       if(liczba > los)
+                       {
+                        alert("liczba za dluga");
+                       }
+                        
+                       if(liczba < los)
+                       {
+                        alert("liczba za krotka");
+                       }
+                        
+                       if(liczba == los)
+                       {
+                        alert("brawo zgadles w "+licznik+" probach");
+                       }
+                    
+                }
+                while(liczba != los);
+            }
+        </script>
+
+        <div class="box">
+        <form>
+            <input type="button" value="losuj liczbe" onclick="oblicz()">
+        </form>
+    </div>
+    </body>
+</html>

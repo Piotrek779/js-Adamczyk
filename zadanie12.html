@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+
+padding: 0;
+
+margin: 0;
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+height: 100vh;
+
+}
+
+.box{
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+flex-direction: column;
+
+padding: 20px;
+
+border: solid black 5px;
+
+}
+
+.box .text{
+
+width: 50px;
+
+text-align: right;
+
+margin-right: 10px;
+
+}
+
+.line{
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+margin-bottom: 10px;
+
+}
+
+button{
+
+margin-bottom: 10px;
+
+}
+</style>
+    </head>
+    <body>
+
+        <script>
+            function oblicz() 
+            {
+                let a = parseInt(document.getElementById("liczba1").value);
+                let b = parseInt(document.getElementById("liczba2").value);
+
+                while(a!=b && a!=0) 
+                {
+                    if(a>b)
+                        a = a-b;
+                    else 
+                        b = b-a;
+                }
+               wynik.innerHTML = a;
+            }
+        </script>
+
+        <div class="box">
+        <form>
+            Najwiekszy wspolny dzielnik  <br>
+            pierwsza liczba <input id="liczba1"> <br>
+            druga liczba <input id="liczba2"> <br>
+            najwiekszy wspolny dzielnik to: <div id="wynik"></div>
+            <input type="button" value="oblicz" onclick="oblicz()">
+        </form>
+    </div>
+    </body>
+</html>
