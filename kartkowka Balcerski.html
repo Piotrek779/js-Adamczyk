@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            function oblicz() {
+
+                var il = document.getElementById('ile')
+                var ile = parseInt(il.value)
+                var co = document.getElementById('lista');
+                var co2 = parseInt(co.value);
+                switch(co2) {
+                    case 1: 
+                    var odp = ile*8;
+                    wynik.innerHTML = odp;
+                    break;
+                    case 2: 
+                    var odp = ile*9;
+                    wynik.innerHTML = odp;
+                    break;
+                    case 3: 
+                    var odp = ile*11;
+                    wynik.innerHTML = odp;
+                    break;
+                }
+            }
+        </script>
+         <form>
+            Podaj ilosc kawy <input id="ile">
+        <select id="lista">
+            <option value="1">kawa palona arabica 8 zl</option>
+            <option value="2">kawa palona robusta 9 zl</option>
+            <option value="3">kawa bezkofeinowa 11 zl</option>
+            <input type="button" value="oblicz cene zamowienia" onclick="oblicz()"> 
+            cena:
+            <div id="wynik"></div>
+        </form>
+    </body>
+</html>
