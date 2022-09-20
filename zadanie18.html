@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            function zlz()
+            {
+                let co = prompt("wpisz szukane slowo");
+                let na = prompt("na co zmieniamy");
+                replaceAll(co,na);
+                
+            }
+            function wl()
+            {
+                let tekst = pole.value;
+                tekst = tekst.toUpperCase();
+                pole.value = tekst;
+            }
+            function ml()
+            {
+                let tekst = pole.value;
+                tekst = tekst.toLowerCase();
+                pole.value = tekst;
+            }
+        </script>
+        <textarea id="pole" cols="20" rows="10"></textarea>
+        <input type="button" value="znajdz i zamien" onclick="zlz()">
+        <input type="button" value="wielkie" onclick="wl()">
+        <input type="button" value="male" onclick="ml()">
+    </body>
+</html>
