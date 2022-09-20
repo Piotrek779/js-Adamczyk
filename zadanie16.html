@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <style>
+        .czarny 
+        {
+            background-color: black;
+        }
+        td 
+        {
+            width: 50px;
+            height: 50px;
+        }
+       </style>
+    </head>
+    <body>
+            <script>
+            function plus() 
+            {
+                let temp="<table>";
+                for(let i=0;i<=10;i++)
+                {
+                    temp+= "<tr>";
+                    for(let j=0;j<=10;j++)
+                    {
+                        if(i==5 || j==5)
+                        {
+                            temp+="<td class='czarny'></td>";
+                        }
+                        else 
+                        {
+                            temp+="<td></td>";
+                        }
+                    }
+                    temp+="</tr>";
+                }
+                temp+="</table>";
+                wynik.innerHTML=temp;
+            }
+            </script>
+                <input type="button" value="start" onclick="plus()">
+                <div id="wynik"></div>
+            
+    </body>
+</html>
