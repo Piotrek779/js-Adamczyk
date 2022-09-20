@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            function licz()
+            {
+              document.getElementById('wynik1').innerHTML = document.getElementById('pole').value.length;
+              let wyrazy = 0;
+              if(document.getElementById('pole').value.length > 0)
+              {
+                    wyrazy = document.getElementById('pole').value.split(' ').length;
+
+                    if(wyrazy == 0)
+                    {
+                        wyrazy = 1;
+                    }
+                    document.getElementById('wynik2').innerHTML = wyrazy;
+              }
+              else 
+              {
+                    wyrazy = 0;
+                    document.getElementById('wynik2').innerHTML = wyrazy;
+              }
+              
+            }
+        </script>
+        <textarea id="pole" cols="20" rows="10" onkeyup="licz()"></textarea>
+        <div class="wynik">liczba znakow w tekscie: <span id="wynik1">0</span></div>
+        <div class="wynik2">liczba wyrazow w tekscie:<span id="wynik2">0</span></div>
+    </body>
+</html>
