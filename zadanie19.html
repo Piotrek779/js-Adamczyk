@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        body{
+
+            padding: 0;
+            
+            margin: 0;
+            
+            display: flex;
+            
+            justify-content: center;
+            
+            align-items: center;
+            
+            height: 100vh;
+            
+            }
+            
+            .box{
+            
+            display: flex;
+            
+            justify-content: center;
+            
+            align-items: center;
+            
+            flex-direction: column;
+            
+            padding: 20px;
+            
+            border: solid black 5px;
+            
+            }
+            
+            .box .text{
+            
+            width: 50px;
+            
+            text-align: right;
+            
+            margin-right: 10px;
+            
+            }
+            
+            .line{
+            
+            display: flex;
+            
+            justify-content: center;
+            
+            align-items: center;
+            
+            margin-bottom: 10px;
+            
+            }
+            
+            button{
+            
+            margin-bottom: 10px;
+            
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+
+            var tablica = new Array();
+
+           function Tablica()
+           {
+                var n = parseInt(ile.value);
+                var a = parseInt(min.value);
+                var b = parseInt(max.value);
+                for(let i=0;i<n;i++)
+                {
+                    tablica[i] = Math.floor(Math.random()*(b-a+1)) + a;
+                }
+            wyswietl();
+           }
+
+           function wyswietl()
+           {
+                 document.getElementById('wynik').innerHTML = tablica.sort((x,y)=>x-y);
+           }
+
+           function minmax()
+           {
+                let Min = tablica[0];
+                for(let x of tablica) 
+                {
+                    if(x < Min) 
+                    {
+                        Min = x;
+                    }
+                }
+                let Max = tablica[0];
+                for(let l of tablica)
+                {
+                    if(l > Max)
+                    {
+                        Max = l;
+                    }
+                }
+            document.getElementById('wynik2').innerHTML = Max;
+            document.getElementById('wynik3').innerHTML = Min;
+           }
+
+           function srednia()
+           {
+                let suma = 0;
+                for(let k of tablica)
+                {
+                    suma+=k;
+                }
+                let o = tablica.length;
+                let srednia = suma/o;
+                document.getElementById('wynik4').innerHTML = srednia;
+           }
+
+           function szukaj()
+           {
+                let szukana = parseInt(prompt("podaj liczbe"));
+                let licznik = 0;
+                for(let y of tablica)
+                {
+                    if(y==szukana)
+                    {
+                        licznik++;
+                    }
+                    else if(licznik == 0) 
+                    {
+                        alert("nie ma takiej liczby");
+                        return 0;
+                    }
+                }
+                document.getElementById('wynik5').innerHTML = szukana;
+           }
+           function kwadrat()
+           {
+                tablica = tablica.map(x=>x**2);
+                wyswietl();
+           }
+           function parzyste_nieparzyste()
+           {
+               let p = tablica.filter(x=>x%2==0).length;
+               let np = tablica.filter(x=>x%2!=0).length;
+                document.getElementById('wynik6').innerHTML = p,np;
+           }
+        </script>
+        <div id="box">
+            <fieldset>
+           <legend>przedzial losowania</legend>
+            ile <input id="ile">
+            od <input id="min">
+            do <input id="max">
+     
+        <input type="button" value="generuj tablice" onclick="Tablica()"> 
+        <input type="button" value="znajdz wartosc min i maks" onclick="minmax()"> 
+        <input type="button" value="policz srednia" onclick="srednia()">
+        <input type="button" value="szukaj" onclick="szukaj()">
+        <input type="button" value="kwadratowa tablica" onclick="kwadrat()"> 
+        <input type="button" value="liczby parzyste i nieparzyste" onclick="parzyste_nieparzyste()">
+       <div id="wynik"></div> 
+       wartosc maks <div id="wynik2"></div> 
+       wartosc min <div id="wynik3"></div> 
+       srednia <div id="wynik4"></div>
+       szukana liczba <div id="wynik5"></div> 
+       liczby parzyste i nieparzyste <div id="wynik6"></div> 
+    </fieldset>
+    </div>
+    </body>
+</html>
