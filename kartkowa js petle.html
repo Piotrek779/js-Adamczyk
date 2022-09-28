@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+
+padding: 0;
+
+margin: 0;
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+height: 100vh;
+
+}
+
+.box{
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+flex-direction: column;
+
+padding: 20px;
+
+border: solid black 5px;
+
+}
+
+.box .text{
+
+width: 50px;
+
+text-align: right;
+
+margin-right: 10px;
+
+}
+
+.line{
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+margin-bottom: 10px;
+
+}
+
+button{
+
+margin-bottom: 10px;
+
+}
+</style>
+    </head>
+    <body>
+        <script>
+            function oblicz() {
+                var a = parseInt(document.getElementById("liczba1").value);
+                var n = parseInt(document.getElementById("liczba2").value);
+                let temp = [];
+
+                if(a<=n)
+                {
+                    for(a;a<=n;a++)
+                    {
+                         temp += a;
+                    }
+                wynik.innerHTML = temp;
+                } else 
+                    {
+                        for(a;a>=n;a--)
+                        {
+                            temp += a;
+                        }
+                        wynik.innerHTML = temp;
+                    }
+            }
+        </script>
+        <div class="box">
+        <form>
+              <br>
+            liczba1<input id="liczba1"> <br>
+            liczba2 <input id="liczba2"> <br>
+            WYNIK: <div id="wynik"></div> <br>
+            <input type="button" value="oblicz" onclick="oblicz()">
+        </form>
+    </div>
+    </body>
+</html>
