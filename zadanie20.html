@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body onload="czas()">
+        <script type="text/JavaScript">
+            function czas()
+            {
+                let data = new Date();
+                const rok = data.getFullYear();
+                const m = data.getMonth();
+                const d = data.getDay();
+                const dd = data.getDate();
+                let h = data.getHours();
+                let min = data.getMinutes();
+                let sec = data.getSeconds();
+                
+                const dni = ['niedziela','poniedziałek','wtorek','sroda','czwartek','piatek','sobota'];
+                const mies = ['styczen','luty','marzec','kwiecien','maj','czerwiec','lipiec','sierpien','wrzesien','pazdziernik','grudzien'];
+
+                if(sec<10)
+                {
+                    
+                }
+
+                const dzien = dni[d];
+                const miesiace = mies[m];
+
+                odp.innerText = 'dzis jest '+dzien+' '+dd+' '+miesiace+' '+rok+' '+h+':'+min+':'+sec;
+
+                const matura = new Date(2023,4,4,9);
+                let roznica = matura.getTime()-data.getTime();
+                let godz = Math.Floor(roznica/(1000*60*60)%24);
+                let dnim = Math.Floor(roznica/(1000*60*6024*24));
+                let minm = Math.Floor(roznica/(1000*60)%60);
+                let sek = Math.Floor(roznica/(1000)%60);
+
+                odp2.innerText = 'Do matury zostało: '+dnim+' dni '+godz+' godzin '+minm+' minut '+sek+' sekund ';
+
+            }
+        </script>
+
+        <div id="odp"></div>
+        <div id="odp2"></div>
+
+
+    </body>
+</html>
