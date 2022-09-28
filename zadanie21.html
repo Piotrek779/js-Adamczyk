@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            body {
+                padding: 0%;
+                margin: 0%;
+            }
+        </style>
+
+    </head>
+    <body>
+    
+        <div id="kula" onclick="StartStop()" style="position:absolute; height: 100px ; width: 100px ; border-radius: 50% ; border: solid black 4px ; background-color: aqua; top: 0px ; left: 0px;">
+
+        </div>
+
+        <script>
+            let krokx=3;
+            let kroky=2;
+            let timer = null;
+            function ruch()
+            {
+                let x = parseInt(kula.style.left);
+                let y = parseInt(kula.style.top);
+                x += krokx;
+                y += kroky;
+
+                if(x>1500){
+                    krokx =-krokx;
+                }
+                if(x<=0){
+                    krokx=-krokx;
+                }
+                if(y>750){
+                    kroky=-kroky;
+                }
+                if(y<=0){
+                    kroky=-kroky;
+                }
+
+                kula.style.top = y+"px";
+                kula.style.left = x+"px";
+            }
+            function StartStop() 
+            {
+                if(timer == null)
+                {
+                    timer = setInterval(ruch,15);
+                }
+                else
+                    {
+                        clearInterval(timer);
+                        timer = null;
+                    }
+            }
+           
+        </script>
+    </body>
+</html>
